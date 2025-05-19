@@ -85,7 +85,7 @@ const ListSiswa = () => {
                   <button
                     onClick={() =>
                       navigate(
-                        `/lapasi/data-siswa/detail-siswa/${item && item.id}`
+                        `/pantai-disa/data-siswa/detail-siswa/${item && item.id}`
                       )
                     }
                     className="detail"

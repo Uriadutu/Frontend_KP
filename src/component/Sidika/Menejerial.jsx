@@ -95,14 +95,14 @@ const Menejerial = () => {
       <div style={{ display: "none" }}>
         <MenejerialPDF ref={ComponentToPDF} menejerial={dataAkademik} />
       </div>
-      <h1 className="judul">Pendampingan Menejerial</h1>
+      <h1 className="judul">Pendampingan Manajerial</h1>
       <div className="flex justify-between mb-4">
         <div className="flex items-center gap-2">
           <button
             onClick={() => setOpenModal(true)}
             className="btn-add hidden sm:block"
           >
-            Tambah Menejerial
+            Tambah Manajerial
           </button>
           <button
             onClick={downloadExcel}

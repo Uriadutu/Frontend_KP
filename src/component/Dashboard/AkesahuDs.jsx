@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import axios from "axios";
-import { Bar, Doughnut, Line, Pie } from "react-chartjs-2";
+import { Line, Pie } from "react-chartjs-2";
 
 const AkesahuDs = () => {
   const [chartData, setChartData] = useState({

@@ -144,7 +144,7 @@ const PaludiDs = () => {
     getSekolah("sekolah-menengah-atas", setSekolahSma);
   }, []);
   return (
-    <div className="flex grid grid-cols-1 md:grid-cols-4 gap-x-2 gap-y-2 ">
+    <div className="grid grid-cols-1 md:grid-cols-4 gap-x-2 gap-y-2 ">
       <div className="bg-white rounded p-3 drop-shadow-md">
         <h1 className="text-xl font-bold text-center">Chart Guru Pak</h1>
         <div className="flex justify-center items-center">
@@ -211,7 +211,7 @@ const PaludiDs = () => {
           to={"/paludi/data-gereja"}
           className="bg-white border border-gray-500 w-full drop-shadow-md"
         >
-          <div className="flex p-2 justify-between text-end items-center text-black  items-center w-full">
+          <div className="flex p-2 justify-between text-end items-center text-black w-full">
             <h1>Gereja</h1>
             <h1>{gereja}</h1>
           </div>
@@ -220,7 +220,7 @@ const PaludiDs = () => {
           to={"/paludi/data-penyuluh"}
           className="bg-white border border-gray-500 w-full drop-shadow-md"
         >
-          <div className="flex p-2 justify-between text-end items-center text-black  items-center w-full">
+          <div className="flex p-2 justify-between text-end items-center text-black w-full">
             <h1>Penyulu</h1>
             <h1>{penyulu}</h1>
           </div>
@@ -229,7 +229,7 @@ const PaludiDs = () => {
           to={"/paludi/data-lembaga-keagamaan"}
           className="bg-white border border-gray-500 w-full drop-shadow-md"
         >
-          <div className="flex p-2 justify-between text-end items-center text-black  items-center w-full">
+          <div className="flex p-2 justify-between text-end items-center text-black w-full">
             <h1>Lembaga Keagamaan</h1>
             <h1>{lembaga}</h1>
           </div>
@@ -238,7 +238,7 @@ const PaludiDs = () => {
           to={"/paludi/data-organisasi-masyarakat"}
           className="bg-white border border-gray-500 w-full drop-shadow-md"
         >
-          <div className="flex p-2 justify-between text-end items-center text-black  items-center w-full">
+          <div className="flex p-2 justify-between text-end items-center text-black  w-full">
             <h1>Organisasi</h1>
             <h1>{organisasi}</h1>
           </div>

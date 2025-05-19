@@ -82,7 +82,7 @@ const DataNRTahunan = () => {
 
   useEffect(() => {
     getNRTahunan(tahun);
-  }, []);
+  }, [tahun]);
 
   const hapusNRTahun = async (id) => {
     if (window.confirm("Apakah Nada Ingin Menghapus Data Ini??")) {

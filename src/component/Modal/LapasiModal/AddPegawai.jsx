@@ -1,5 +1,6 @@
 import axios from "axios";
 import React, { useEffect, useState } from "react";
+import { formatTanggalLahir, formatTanggalTMT } from "../../../utils/helper";
 
 const AddPegawaiModal = ({ setIsOpenModalAdd, getPegawai }) => {
   const [jabatanOption, setJabatanOption] = useState([])
@@ -21,7 +22,56 @@ const AddPegawaiModal = ({ setIsOpenModalAdd, getPegawai }) => {
   const [Agama, setAgama] = useState("");
   const [SatuanKerja, setSatuanKerja] = useState("");
   const [msg, setMsg] = useState([])
+  // const NIP = 195902252000112001;
 
+  // Mendapatkan Tahun Lahir dari NIP
+  const getTahunLahir = (nip) => {
+    const tahunLahir = nip.toString().slice(0, 8);
+    return formatTanggalLahir(tahunLahir);
+  }
+
+  
+
+  
+  // Mendapatkan TMT Awal dari NIP (Tanggal Mulai Tugas)
+  const getTmtAwal = (nip) => {
+    const tmtAwal = nip.toString().slice(8, 14); // Ambil 6 digit setelah tahun lahir (TMT Awal)
+    return tmtAwal;
+  }
+  
+  // Menghitung Lama Kerja berdasarkan TMT Awal
+  const getLamaKerja = (TmtAwal) => {
+    const tahunAwal = parseInt(TmtAwal.slice(0, 4)); // Tahun dari TmtAwal
+    const bulanAwal = parseInt(TmtAwal.slice(4, 6)); // Bulan dari TmtAwal
+    
+    // Tanggal hari ini
+    const today = new Date();
+    const tahunSekarang = today.getFullYear();
+    const bulanSekarang = today.getMonth() + 1; // getMonth() mulai dari 0, jadi tambahkan 1
+    
+    // Hitung Lama Kerja
+    let tahunKerja = tahunSekarang - tahunAwal;
+    let bulanKerja = bulanSekarang - bulanAwal;
+    
+    if (bulanKerja < 0) {
+      tahunKerja -= 1; // Kurangi 1 tahun jika bulan sekarang lebih kecil dari bulan awal
+      bulanKerja += 12; // Tambahkan 12 bulan
+    }
+    
+    const lamaKerja = `${tahunKerja} tahun ${bulanKerja} bulan`;
+    return lamaKerja;
+  }
+  
+  // Menghitung TMT Akhir (Pensiun) berdasarkan TMT Awal
+  const getTmtAkhir = (TmtAwal) => {
+    const tahunAwal = parseInt(TmtAwal.slice(0, 4)); // Tahun dari TmtAwal
+    const tahunAkhir = tahunAwal + 58; // Tambahkan 58 tahun
+    const TmtAkhir = `${tahunAkhir}${TmtAwal.slice(4, 6)}`; // Format TMT Akhir (pensiun)
+    return formatTanggalTMT(TmtAkhir);
+  }
+  
+
+  
   const handleSubmit = async (e) => {
     e.preventDefault();
     
@@ -35,18 +85,20 @@ const AddPegawaiModal = ({ setIsOpenModalAdd, getPegawai }) => {
           pangkat_gol : PangkatGolongan,
           tmt_terakhir: TMTSKPangkat,
           jabatan : Jabatan,
-          tmt_pengangkatan : TMTPengangkatan,
-          tmt_pensiun : TMTPensiun,
+          tmt_pengangkatan : formatTanggalTMT(getTmtAwal(NIP)),
+          tmt_pensiun : getTmtAkhir(getTmtAwal(NIP)),
           pend_terakhir : PendidikanTerakhir,
           jurusan : JurusanProdi,
           tahun_lulus :TahunLulus,
           jenis_kelamin :JenisKelamin,
           temp_lahir: TempatLahir,
-          tgl_lahir : TanggalLahir,
+          tgl_lahir : getTahunLahir(NIP),
           agama : Agama,
           satuan_kerja: SatuanKerja,
         }
       )
+
+      
 
       setIsOpenModalAdd(false);
       getPegawai()
@@ -78,6 +130,9 @@ const AddPegawaiModal = ({ setIsOpenModalAdd, getPegawai }) => {
     getJabatan()
     getSatker()
   },[])
+
+  
+
   return (
     <div
       id="default-modal"
@@ -245,10 +300,11 @@ const AddPegawaiModal = ({ setIsOpenModalAdd, getPegawai }) => {
                   TMT Pengangkatan
                 </label>
                 <input
-                  value={TMTPengangkatan}
+                  value={formatTanggalTMT(getTmtAwal(NIP))}
                   onChange={(e) => setTMTPengangkatan(e.target.value)}
-                  type="date"
+                  type="text"
                   id="tmtPengangkatan"
+                  disabled
                   className="w-full input"
                 />
               </div>
@@ -257,9 +313,10 @@ const AddPegawaiModal = ({ setIsOpenModalAdd, getPegawai }) => {
                   TMT Pensiun
                 </label>
                 <input
-                  value={TMTPensiun}
+                  value={getTmtAkhir(getTmtAwal(NIP))}
                   onChange={(e) => setTMTPensiun(e.target.value)}
-                  type="date"
+                  type="text"
+                  disabled
                   id="tmtPensiun"
                   className="w-full input"
                 />
@@ -344,10 +401,11 @@ const AddPegawaiModal = ({ setIsOpenModalAdd, getPegawai }) => {
                   Tanggal Lahir
                 </label>
                 <input
-                  value={TanggalLahir}
+                  value={getTahunLahir(NIP)}
                   onChange={(e) => setTanggalLahir(e.target.value)}
-                  type="date"
+                  type="text"
                   id="tanggalLahir"
+                  disabled
                   className="w-full input"
                 />
               </div>

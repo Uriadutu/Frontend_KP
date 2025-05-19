@@ -82,8 +82,8 @@ const Welcome = () => {
         </h1>
       </div>
       {(user?.role === "Admin" || user?.hakAkses?.lapasi === true) && (
-        <div className="flex grid grid-cols-2 gap-x-2 gap-y-2 mt-6 md:grid-cols-2 lg:grid-cols-5 sm:gap-x-2 sm:gap-y-2 mt-6">
-          <div className="bg-blue-400 rounded-md drop-shadow-lg p-2 w-full">
+        <div className="grid grid-cols-2 gap-x-2 gap-y-2 md:grid-cols-2 lg:grid-cols-5 sm:gap-x-2 sm:gap-y-2 mt-6">
+          <div className="bg-green-600 rounded-md drop-shadow-lg p-2 w-full">
             <div className="flex p-2 justify-between text-end items-center text-white">
               <h1 className="text-xs sm:text-xl">
                 <IoPerson color="white" size={30} />
@@ -94,7 +94,7 @@ const Welcome = () => {
               </div>
             </div>
           </div>
-          <div className="bg-blue-400 rounded-md drop-shadow-lg p-2 w-full">
+          <div className="bg-green-600 rounded-md drop-shadow-lg p-2 w-full">
             <div className="flex p-2 justify-between text-end items-center text-white">
               <h1 className="text-xs sm:text-xl">
                 <MdOutlineWork color="white" size={30} />
@@ -105,7 +105,7 @@ const Welcome = () => {
               </div>
             </div>
           </div>
-          <div className="bg-blue-400 rounded-md drop-shadow-lg p-2 w-full">
+          <div className="bg-green-600 rounded-md drop-shadow-lg p-2 w-full">
             <div className="flex p-2 justify-between text-end items-center text-white">
               <h1 className="text-xs sm:text-xl">
                 <MdOutlineWork color="white" size={30} />
@@ -116,7 +116,7 @@ const Welcome = () => {
               </div>
             </div>
           </div>
-          <div className="bg-blue-400 rounded-md drop-shadow-lg p-2 w-full">
+          <div className="bg-green-600 rounded-md drop-shadow-lg p-2 w-full">
             <div className="flex p-2 justify-between text-end items-center text-white">
               <h1 className="text-xs sm:text-xl">
                 <HiMiniInboxArrowDown color="white" size={30} />
@@ -127,7 +127,7 @@ const Welcome = () => {
               </div>
             </div>
           </div>
-          <div className="bg-blue-400 rounded-md drop-shadow-lg p-2 w-full col-span-2 lg:col-span-1">
+          <div className="bg-green-600 rounded-md drop-shadow-lg p-2 w-full col-span-2 lg:col-span-1">
             <div className="flex p-2 justify-between text-end items-center text-white">
               <h1 className="text-xs sm:text-xl">
                 <RiInboxUnarchiveFill color="white" size={30} />

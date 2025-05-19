@@ -46,8 +46,8 @@ const DisaDs = () => {
   useEffect(() => {
     const fetchData = async () => {
       await Promise.all([
-        getTotal("sekolah-dasarnegeri", setSdN),
-        getTotal("sekolah-dasarswasta", setSdS),
+        getTotal("raudhatul-athfalnegeri", setSdN),
+        getTotal("raudhatul-athfalswasta", setSdS),
         getTotal("sekolah-dasarpondok-pesantren", setSdP),
         getTotal("sekolah-menengah-pertamanegeri", setSmpN),
         getTotal("sekolah-menengah-pertamaswasta", setSmpS),
@@ -64,7 +64,6 @@ const DisaDs = () => {
   const totalSmp = smpN + smpS + smpP;
   const totalSma = smaN + smaS + smaP;
 
-  
 
   return (
     <div className="grid grid-cols-1 md:grid-cols-4 gap-x-2 gap-y-2">

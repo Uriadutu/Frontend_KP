@@ -41,7 +41,7 @@ const MenejerialPDF = React.forwardRef(({ menejerial }, ref) => {
         </div>
       </div>
 
-      <h1 className="text-center mb-2">DATA PENDAMPINGAN MENEJERIAL</h1>
+      <h1 className="text-center mb-2">DATA PENDAMPINGAN MANAJERIAL</h1>
       <div className="mt-4">
         <h1 className="text-left mb-1">Layanan Kepengawasan </h1>
         <h1 className="text-left">

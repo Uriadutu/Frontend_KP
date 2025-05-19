@@ -1,12 +1,11 @@
 import React, { useEffect } from "react";
-import Layout from "../Layout";
-
+import Layout from "./Layout";
 import { useDispatch, useSelector } from "react-redux";
 import { useNavigate } from "react-router-dom";
-import { getMe } from "../../features/authSlice";
-import DetailDataHaji from "../../component/Akesahu/DetailDataHaji";
+import { getMe } from "../features/authSlice.js";
+import DokumenLama from "../component/DokumenLama.jsx";
 
-const DetailDataHajiPage = () => {
+const DokumenLamaPage = () => {
   const dispatch = useDispatch();
   const navigate = useNavigate();
   const { isError } = useSelector((state) => state.auth);
@@ -22,9 +21,9 @@ const DetailDataHajiPage = () => {
   }, [isError, navigate]);
   return (
     <Layout>
-      <DetailDataHaji />
+      <DokumenLama />
     </Layout>
   );
 };
 
-export default DetailDataHajiPage;
+export default DokumenLamaPage;

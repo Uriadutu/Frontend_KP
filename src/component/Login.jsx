@@ -40,7 +40,7 @@ const Login = () => {
       <div className="backdrop-filter backdrop-blur-[5px] bg-opacity-50 bg-[#848484] p-6 rounded border border-white shadow-lg w-[30rem] max-w-full">
         <form onSubmit={Auth} className="space-y-4" autocomplete="off">
           {isError && (
-            <div className="bg-red-500 text-white px-2 py-1 rounded text-center">
+            <div className="border border-red-500 text-red-500 px-2 py-1 rounded bg-red-200 bg-opacity-50  text-center">
               {message}
             </div>
           )}
@@ -61,7 +61,7 @@ const Login = () => {
               className="w-full p-2 border border-black "
               value={Username}
               onChange={(e) => setUsername(e.target.value)}
-              placeholder="NIP"
+              placeholder="NIP/Username"
             />
             <input
               id="password"
@@ -69,7 +69,7 @@ const Login = () => {
               className="w-full p-2 border border-black "
               value={Password}
               onChange={(e) => setPassword(e.target.value)}
-              placeholder="Password"
+              placeholder="Kata Sandi"
             />
           </div>
           <button

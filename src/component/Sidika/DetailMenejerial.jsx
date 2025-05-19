@@ -28,7 +28,7 @@ const DetailMenejerial = () => {
 
   return (
     <div className="contain">
-      <h2 className="judul">Detail Menejerial</h2>
+      <h2 className="judul">Detail Manajerial</h2>
       <button className="btn-back" onClick={() => navigate(-1)}>
         Kembali
       </button>

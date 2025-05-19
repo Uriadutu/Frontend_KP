@@ -31,8 +31,6 @@ const SahuDs = () => {
     }
   };
 
-  console.log(zakatPenyaluran, zakatTerima, tanahSerti, tanahNon);
-
   useEffect(() => {
     getKec();
     getData("zakat/kategori/Penerima", setZakatTerima);
@@ -67,7 +65,7 @@ const SahuDs = () => {
         </Link>
       </div>
       <div className="bg-white rounded p-3 drop-shadow-md flex flex-col h-full">
-        <h1 className="text-xl font-bold text-center mb-4">Chart Sahu</h1>
+        <h1 className="text-xl font-bold text-center mb-4">Chart Zakat Wakaf</h1>
         <div className="flex-grow">
           <Bar
             data={{

@@ -72,6 +72,7 @@ import DataNikahRujukPage from "./pages/SariaPage/DataNikahRujukPage.jsx";
 import ListNRBulananPage from "./pages/SariaPage/BulananPage/ListNRBulananPage.jsx";
 import DataNRPerTahunPage from "./pages/SariaPage/BulananPage/DataNRPerTahunPage.jsx";
 import DataNRTahunanPage from "./pages/SariaPage/TahunanPage/DataNRTahunanPage.jsx";
+import DokumenLamaPage from "./pages/DokumenLamaPage.jsx";
 
 
 function App() {
@@ -81,6 +82,7 @@ function App() {
         <Routes>
           {/* User */}
           <Route path="/" element={<LoginPage />} />
+          <Route path="/:seksi/dokumen-lama" element={<DokumenLamaPage />} />
 
           <Route path="/dashboard" element={<Home />} />
           <Route path="/manajemen-akun" element={<HakAksesPage />} />

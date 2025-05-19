@@ -4,12 +4,14 @@ import { useDispatch, useSelector } from "react-redux";
 import { LogOut, reset } from "../features/authSlice";
 import { FaTimes } from "react-icons/fa";
 
+
 const Sidebar = ({ tutupSidebar }) => {
   const [openDropdown, setOpenDropdown] = useState(null);
   const { user } = useSelector((state) => state.auth);
   const dispatch = useDispatch();
   const navigate = useNavigate();
   const location = useLocation();
+
 
   useEffect(() => {
     // Detect active route and keep dropdown open
@@ -149,6 +151,12 @@ const Sidebar = ({ tutupSidebar }) => {
                     >
                       Data Surat Keluar
                     </NavLink>
+                    <NavLink
+                      to="/lapasi/dokumen-lama"
+                      className={getNavLinkClass}
+                    >
+                      Dokumen Lama
+                    </NavLink>
                   </div>
                 )}
               </div>
@@ -158,7 +166,7 @@ const Sidebar = ({ tutupSidebar }) => {
                 target="_blank"
                 title="Pelayanan Bersama Organisasi"
               >
-               Sekretariat
+                Sekretariat
               </NavLink>
             </div>
           )}
@@ -229,6 +237,12 @@ const Sidebar = ({ tutupSidebar }) => {
                   >
                     Data Surat Keluar
                   </NavLink>
+                  <NavLink
+                    to="/pantai-disa/dokumen-lama"
+                    className={getNavLinkClass}
+                  >
+                    Dokumen Lama
+                  </NavLink>
                 </div>
               )}
             </div>
@@ -278,6 +292,9 @@ const Sidebar = ({ tutupSidebar }) => {
                     className={getNavLinkClass}
                   >
                     Data Surat Keluar
+                  </NavLink>
+                  <NavLink to="/akesahu/dokumen-lama" className={getNavLinkClass}>
+                    Dokumen Lama
                   </NavLink>
                 </div>
               )}
@@ -341,7 +358,10 @@ const Sidebar = ({ tutupSidebar }) => {
                   >
                     Data Penghulu
                   </NavLink>
-                  <NavLink to="/saria/data-nikah-rujuk" className={getNavLinkClass}>
+                  <NavLink
+                    to="/saria/data-nikah-rujuk"
+                    className={getNavLinkClass}
+                  >
                     Data Nikah Rujuk
                   </NavLink>
                   <NavLink to="/saria/data-kua" className={getNavLinkClass}>
@@ -364,6 +384,12 @@ const Sidebar = ({ tutupSidebar }) => {
                   </NavLink>
                   <NavLink to="/saria/surat-keluar" className={getNavLinkClass}>
                     Data Surat Keluar
+                  </NavLink>
+                  <NavLink
+                    to="/saria/dokumen-lama"
+                    className={getNavLinkClass}
+                  >
+                    Dokumen Lama
                   </NavLink>
                 </div>
               )}
@@ -466,6 +492,12 @@ const Sidebar = ({ tutupSidebar }) => {
                   >
                     Data Surat Keluar
                   </NavLink>
+                  <NavLink
+                    to="/paludi/dokumen-lama"
+                    className={getNavLinkClass}
+                  >
+                    Dokumen Lama
+                  </NavLink>
                 </div>
               )}
             </div>
@@ -522,6 +554,12 @@ const Sidebar = ({ tutupSidebar }) => {
                   <NavLink to="/sahu/surat-keluar" className={getNavLinkClass}>
                     Data Surat Keluar
                   </NavLink>
+                  <NavLink
+                    to="/sahu/dokumen-lama"
+                    className={getNavLinkClass}
+                  >
+                    Dokumen Lama
+                  </NavLink>
                 </div>
               )}
             </div>
@@ -569,7 +607,7 @@ const Sidebar = ({ tutupSidebar }) => {
                     to="/sidika/data-pendampingan-menejerial"
                     className={getNavLinkClass}
                   >
-                    Pendampingan Menejerial
+                    Pendampingan Manajerial
                   </NavLink>
                   <NavLink to="/sidika/surat-masuk" className={getNavLinkClass}>
                     Data Surat Masuk
@@ -580,14 +618,17 @@ const Sidebar = ({ tutupSidebar }) => {
                   >
                     Data Surat Keluar
                   </NavLink>
+                  <NavLink
+                    to="/sidika/dokumen-lama"
+                    className={getNavLinkClass}
+                  >
+                    Dokumen Lama
+                  </NavLink>
                 </div>
               )}
             </div>
           )}
 
-          <NavLink to="/layanan-pengaduan" className={getNavLinkClass}>
-            Layanan Pengaduan
-          </NavLink>
           {user?.role === "Admin" && (
             <NavLink to="/manajemen-akun" className={getNavLinkClass}>
               Manajemen Akun

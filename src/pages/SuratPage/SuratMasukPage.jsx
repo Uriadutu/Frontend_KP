@@ -16,7 +16,7 @@ const SuratMasukPage = () => {
 
   useEffect(() => {
     if (isError) {
-      navigate("/login");
+      navigate("/");
     }
   }, [isError, navigate]);
   return (

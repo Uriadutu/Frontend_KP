@@ -16,7 +16,7 @@ const LayananPengaduanPage = () => {
 
   useEffect(() => {
     if (isError) {
-      navigate("/login");
+      navigate("/");
     }
   }, [isError, navigate]);
   return (
